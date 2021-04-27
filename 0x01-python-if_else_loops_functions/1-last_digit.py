@@ -7,4 +7,5 @@ if n > 5:
 elif n == 0:
     print("Last digit of {:d} is {:d} and is 0".format(number, n))
 elif n < 6 and n != 0:
-    print("Last digit of {:d} is {:d} and is less than 6 and not 0".format(number, n), end="")
+    print("Last digit of {:d} is {:d}".format(number, n), end="")
+    print(" and is less than 6 and not 0")
