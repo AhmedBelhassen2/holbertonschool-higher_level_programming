@@ -1,0 +1,30 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * main - check the code for Holberton School students.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	listint_t *head;
+
+	head = NULL;
+	add_nodeint_end(&head, 29);
+	add_nodeint_end(&head, 30);
+	add_nodeint_end(&head, 31);
+	add_nodeint_end(&head, 32);
+
+	printf("-----------------\n");
+
+	insert_node(&head, 27);
+
+	print_listint(head);
+
+	free_listint(head);
+
+	return (0);
+}
