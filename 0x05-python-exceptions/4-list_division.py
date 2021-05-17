@@ -2,7 +2,7 @@
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     rtat = 0
-  for c in range(0, list_length):
+    for c in range(0, list_length):
         try:
             rtat = my_list_1[c] / my_list_2[c]
         except TypeError:
