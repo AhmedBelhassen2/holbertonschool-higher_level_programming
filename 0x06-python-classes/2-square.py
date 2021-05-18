@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """ Module Square """
+
+
 class Square:
-    """ class Square that defines a square:
-    size must be an integer
-    size must not be negative """
+    """ class Square that defines a square """
     def __init__(self, size=0):
-        """ initializes the square,  sets size equal to 0 by default,
-        checks if size has the correct type and value """
+        """ initializes the square """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         else:
