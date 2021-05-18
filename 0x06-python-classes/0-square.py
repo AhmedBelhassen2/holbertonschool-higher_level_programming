@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-""" Module Square """
+""" Square class is an empty """
 
 
-
-    """ empty class Square """
-class square:
+class Square:
+    """ class that defines a square """
     pass
