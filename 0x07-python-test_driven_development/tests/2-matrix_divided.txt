@@ -10,10 +10,22 @@ Using ``matrix_divided``
 
 import module:
 
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
 >>> matrix = [
 ... [1, 2, 3],
 ... [4, 5, 6]
 ... ]
 >>> print(matrix)
 [[1, 2, 3], [4, 5, 6]]
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix = [
+...     "i'm not a list here",
+...     [4, 5, 6, 10]
+... ]
+>>> matrix = [
+...     [1, "i'm not int", 3],
+...     [4, 5, 6]
+... ]
