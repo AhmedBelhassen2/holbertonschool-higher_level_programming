@@ -1,11 +1,3 @@
-=============================
-The ``0-add_integer`` module
-=============================
-
-Using ``add_integer``
----------------------
-
-Import the function:
 >>> add = __import__("0-add_integer").add_integer
 >>> add(1, 2)
 3
@@ -34,15 +26,11 @@ a must be an integer
 ... except Exception as e:
 ...   print(e)
 b must be an integer
->>> print(add_integer(4.5, 3.5))
-7
 >>> try:
 ...   print(add_integer("hello", ))
 ... except Exception as e:
 ...   print(e)
 a must be an integer
->>> print(add_integer(2, ))
-100
 >>> try:
 ...   print(add_integer(None, 5))
 ... except Exception as e:
