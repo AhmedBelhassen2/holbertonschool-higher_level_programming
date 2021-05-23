@@ -26,3 +26,5 @@ a must be an integer
 ... except Exception as e:
 ...   print(e)
 a must be an integer
+>>> add_integer(-2,-1)
+-3
