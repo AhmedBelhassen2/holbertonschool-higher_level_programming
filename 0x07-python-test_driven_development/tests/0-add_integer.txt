@@ -30,8 +30,6 @@ a must be an integer
 b must be an integer
 >>> print(add_integer(4.5, 3.5))
 8
->>> print(add_integer(0.5, ))
-98
 >>> try:
 ...   print(add_integer("hello", ))
 ... except Exception as e:
