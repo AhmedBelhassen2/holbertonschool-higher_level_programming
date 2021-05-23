@@ -9,6 +9,8 @@
 98
 >>> add(100.3, -2.1)
 98
+>>> add(100, -2.1)
+98
 >>> try:
 ...     add(4, "School")
 ... except Exception as e:
@@ -21,13 +23,23 @@ b must be an integer
 ...     print(e)
 ...
 a must be an integer
+>>> add(1, 2.9)
+3
 >>> try:
-...   print(add_integer(None, 5))
+...     add(1, [5, 6])
 ... except Exception as e:
-...   print(e)
-a must be an integer
->>> add_integer(-2,-1)
--3
->>> add_integer()
-Traceback (most recent call last):
-TypeError: add_integer() missing 1 required positional argument: 'a'
+...     print(e)
+...
+b must be an integer
+>>> try:
+...     add(1, float('inf'))
+... except Exception as e:
+...     print(e)
+...
+cannot convert float infinity to integer
+>>> try:
+...     add(1, float('NaN'))
+... except Exception as e:
+...     print(e)
+...
+cannot convert float NaN to integer
