@@ -17,8 +17,6 @@ Import the function:
 98
 >>> add(100.3, -2.1)
 98
->>> add(100, -2.1)
-98
 >>> try:
 ...     add(4, "School")
 ... except Exception as e:
@@ -37,7 +35,7 @@ a must be an integer
 ...   print(e)
 b must be an integer
 >>> print(add_integer(4.5, 3.5))
-8
+7
 >>> try:
 ...   print(add_integer("hello", ))
 ... except Exception as e:
