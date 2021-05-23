@@ -2,9 +2,15 @@ This is a doctest based regression suite for 2-matrix_divided.py
 Each '>>>' line is run as if in a python shell, and counts as a test.
 The next line, if not '>>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
+The ``2-matrix_divided`` module
+======================
 
->>> matrix =  __import__("2-matrix_divided").matrix_divided
+Using ``matrix_divided``
+-------------------
 
+import module:
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> matrix = [
 ... [1, 2, 3],
 ... [4, 5, 6]
