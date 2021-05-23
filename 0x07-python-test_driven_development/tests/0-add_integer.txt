@@ -22,16 +22,6 @@ b must be an integer
 ...
 a must be an integer
 >>> try:
-...   print(add_integer(4, None))
-... except Exception as e:
-...   print(e)
-b must be an integer
->>> try:
-...   print(add_integer("hello", ))
-... except Exception as e:
-...   print(e)
-a must be an integer
->>> try:
 ...   print(add_integer(None, 5))
 ... except Exception as e:
 ...   print(e)
