@@ -32,3 +32,8 @@ b must be an integer
 8
 >>> print(add_integer(0.5, ))
 98
+>>> try:
+...   print(add_integer("hello", ))
+... except Exception as e:
+...   print(e)
+a must be an integer
