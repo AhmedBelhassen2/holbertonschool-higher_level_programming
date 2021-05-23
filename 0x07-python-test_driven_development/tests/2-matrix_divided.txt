@@ -3,55 +3,11 @@ Each '>>>' line is run as if in a python shell, and counts as a test.
 The next line, if not '>>>' is the expected output of the previous line.
 If anything doesn't match exactly (including trailing spaces), the test fails.
 
->>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix =  __import__("2-matrix_divided").matrix_divided
+
 >>> matrix = [
 ... [1, 2, 3],
 ... [4, 5, 6]
 ... ]
->>> print(matrix_divided(matrix, 3))
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 >>> print(matrix)
 [[1, 2, 3], [4, 5, 6]]
->>> print(matrix_divided(matrix, 4))
-[[0.25, 0.5, 0.75], [1.0, 1.25, 1.5]]
->>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
->>> matrix_divided([[3]], 3)
-[[1.0]]
->>> matrix_divided([[3, 9], [12, 15]], -3)
-[[-1.0, -3.0], [-4.0, -5.0]]
->>> matrix_divided([[3, 9], [12, 15, 3]], 6)
-    Traceback (most recent call last):
-    ...
-    TypeError: Each row of the matrix must have the same size
-
-    >>> matrix_divided([[3, "9"], [15, 3]], 3)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-    >>> matrix_divided([[25, 20], [15, 5]], 5)
-    [[5.0, 4.0], [3.0, 1.0]]
-
-    >>> matrix_divided([[3, 9], [15, 3]], "9")
-    Traceback (most recent call last):
-    ...
-    TypeError: div must be a number
-
-    >>> matrix_divided([[3, 9], [15, 3]], 0)
-    Traceback (most recent call last):
-    ...
-    ZeroDivisionError: division by zero
-
-    >>> matrix_divided([3.0, 9.0, 15.0, 3.0], 9)
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-    >>> matrix_divided([[3, 9], [15, 3, 9, 12]], 0)
-    Traceback (most recent call last):
-    ...
-    TypeError: Each row of the matrix must have the same size
-
-    >>> matrix_divided([[3, 9], [15, 3]], float('inf'))
-    [[0.0, 0.0], [0.0, 0.0]]
