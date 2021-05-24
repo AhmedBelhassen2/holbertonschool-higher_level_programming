@@ -62,8 +62,9 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 ch += str(self.print_symbol)
-            ch += '\n'
-        return ch[:-1]
+            if i < self.__height - 1:
+                ch += '\n'
+        return ch
 
     def __repr__(self):
         """ returns a string that creates a new object when evaluated """
