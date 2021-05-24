@@ -12,8 +12,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ instantiation """
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -44,19 +44,29 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    def area(self):
+        """ returns area of rectangle """
+        return self.__height * self.__width
+
+    def perimeter(self):
+        """ returns perimeter of the rectangle """
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__height + self.__width) * 2
+
     def __str__(self):
+        """ returns a printable string when print is called """
         ch = ""
         if self.__width == 0 or self.__height == 0:
             return ch
-        for j in range(self.__height):
-            for i in range(self.__width):
+        for i in range(self.__height):
+            for j in range(self.__width):
                 ch += str(self.print_symbol)
-            if j < self.__height - 1:
-                ch += '\n'
-        return ch
+            ch += '\n'
+        return ch[:-1]
 
     def __repr__(self):
-        """ return a string representation of the rectangle """
+        """ returns a string that creates a new object when evaluated """
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
@@ -78,15 +88,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """ square is a rectangle """
         return cls(size, size)
-
-    def area(self):
-        """ returns area of the rectangle """
-        return self.__height * self.__width
-
-    def perimeter(self):
-        """ returns perimeter of the rectangle """
-        if self.__width == 0 or self.__height == 0:
-            return 0
-        return (self.__height + self.__width) * 2
