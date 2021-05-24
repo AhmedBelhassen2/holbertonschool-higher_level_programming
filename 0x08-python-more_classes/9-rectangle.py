@@ -10,7 +10,12 @@ class Rectangle:
 
     print_symbol = "#"
 
-    def __init__(self, width=0, height=0):
+    @classmethod
+    def square(cls, size=0):
+        """returns a new Rectangle instance that is a square w/ h==w==size"""
+        return cls(size, size)
+
+        def __init__(self, width=0, height=0):
         """ instantiation """
         self.height = height
         self.width = width
@@ -85,8 +90,3 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """  square fn       """
-        return Rectangle(size, size)
