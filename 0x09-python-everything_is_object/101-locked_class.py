@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-"""
-    Locked Class Module
-    """
+""" Nothing More than first name"""
+
+
 class LockedClass:
-    """
-    Write a class LockedClass with no class or object attribute.
-    """
-   __slots__ = ["first_name"]
+    """ only first name no more ?!"""
+    __slots__ = ["first_name"]
