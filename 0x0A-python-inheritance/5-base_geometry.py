@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """
-simple module 
+This module contains an empty class
 """
 
 
 class BaseGeometry:
     """ empty class """
     pass
-    
