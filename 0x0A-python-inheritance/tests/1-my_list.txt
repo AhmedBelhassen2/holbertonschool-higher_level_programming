@@ -1,49 +1,28 @@
-print_sorted(self)
-======================
-
-print_sorted fn
--------------------
-
 >>> MyList = __import__('1-my_list').MyList
 
-first check
+Test:
+	>>> my_list = MyList([3, 1, 4, 2])
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4]
+	>>> print(my_list)
+	[3, 1, 4, 2]
 
->>> my_list = MyList()
->>> my_list.append(9)
->>> my_list.append(5)
->>> my_list.append(8)
->>> my_list.append(1)
->>> my_list.print_sorted()
-[1, 5, 8, 9]
+Test:
+	>>> my_list = MyList([-1, 0, 1])
+	>>> my_list.print_sorted()
+	[-1, 0, 1]
 
+Test:
+	>>> my_list = MyList([2, 3, -1, 0])
+	>>> my_list.print_sorted()
+	[-1, 0, 2, 3]
 
-second
->>> my_list = MyList()
->>> my_list.print_sorted()
-[]
+Test:
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
 
-third
->>> my_list = MyList()
->>> my_list.append(1)
->>> my_list.append(8)
->>> my_list.append(9)
->>> my_list.append(2)
->>> print(my_list)
-[1, 8, 9, 2]
-
-
-fourth
->>> my_list = MyList()
->>> my_list.append(-5)
->>> my_list.append(-8)
->>> my_list.append(0)
->>> my_list.append(8)
->>> my_list.print_sorted()
-[-8, -5, 0, 8]
-
-
->>> my_list = MyList()
->>> my_list.append(8)
->>> my_list.append(8)
->>> my_list.print_sorted()
-[8, 8]
+Test:
+	>>> my_list.append(1)
+	>>> my_list.print_sorted()
+	[1]
