@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """
-number of lines
+writes a string to a text file (UTF8)
 """
 
 
-def number_of_lines(filename=""):
-    """ number of lines fn """
-    with open(filename, mode="r", encoding="utf-8") as f:
-        return len(f.readlines())
+def write_file(filename="", text=""):
+    """
+    writes a string to a text file (UTF8)
+    """
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(text)
+    return len(text)
