@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 """
-This module contains one function
+JSON add
 """
 import json
+import sys
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file')
 
-
-def save_to_json_file(my_obj, filename):
-    """ writes an Object to a text file, using a JSON representation """
-    with open(filename, 'w') as f:
-        j = json.dumps(my_obj)
-        f.write(j)
+args = sys.argv[1:]
+with open('add_item.json', 'a') as f:
+    try:
+        list = load_from_json_file('add_item.json')
+    except:
+        list = []
+    list += args
+    save_to_json_file(list, 'add_item.json')
