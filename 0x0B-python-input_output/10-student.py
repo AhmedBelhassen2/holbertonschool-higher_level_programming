@@ -19,6 +19,6 @@ class Student:
         else:
             d = {}
             for names in attrs:
-                if asattr(self, names):
+                if hasattr(self, names):
                     d[names] = getattr(self, names)
             return (d)
