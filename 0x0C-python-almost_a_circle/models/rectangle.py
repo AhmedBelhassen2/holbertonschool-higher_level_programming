@@ -2,6 +2,7 @@
 """
 simple Rectangle.
 """
+
 from models.base import Base
 
 
