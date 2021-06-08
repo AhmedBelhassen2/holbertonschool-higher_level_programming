@@ -103,15 +103,15 @@ class Rectangle(Base):
         if args:
             for arg in args:
                 if j == 0:
-                    self.id = arg[0]
+                    self.id = arg
                 if j == 1:
-                    self.width = arg[1]
+                    self.width = arg
                 if j == 2:
-                    self.height = arg[2]
+                    self.height = arg
                 if j == 3:
-                    self.x = arg[3]
+                    self.x = arg
                 if j == 4:
-                    self.y = arg[4]
+                    self.y = arg
                 j += 1
         else:
             for arg in kwargs:
