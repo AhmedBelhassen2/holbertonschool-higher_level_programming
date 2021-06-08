@@ -2,7 +2,7 @@
 """
 simple Rectangle.
 """
-from rec.base import Base
+from .base import Base
 
 
 class Rectangle(Base):
