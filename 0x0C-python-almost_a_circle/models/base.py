@@ -24,3 +24,8 @@ class Base:
             return ("[]")
         else:
             return json.dumps(list_dictionaries)
+
+    def save_to_json_file(my_obj, filename):
+        """ returns the JSON representation of an object (string) """
+        with open(filename, "w") as f:
+            return json.dump(my_obj, f)
