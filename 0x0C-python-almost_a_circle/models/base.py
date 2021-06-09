@@ -29,8 +29,8 @@ class Base:
     def save_to_file(cls, list_objs):
         """ returns the JSON representation of an object (string) """
         l = []
-        if list_objs is None:
-            l = []
+        if list_objs is None or list_objs == []:
+            return []
         for j in list_objs:
             l.append(cls.to_dictionary(j))
         with open('{}.json'.format(cls.__name__), "w") as file:
