@@ -10,8 +10,7 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """ class constructor """
-        self.size = size
-        super().__init__(size, size, x, y, id=None):
+        super().__init__(size, size, x, y, id=None)
 
     @property
     def size(self):
@@ -25,7 +24,7 @@ class Square(Rectangle):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__size = value
+        self.width = value
 
     def __str__(self):
         """ informal string representation of the square """
