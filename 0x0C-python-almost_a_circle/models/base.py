@@ -19,7 +19,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """JSONis one of the standard formats for sharing data representation"""
+        """ JSON is representation """
         if list_dictionaries is None or list_dictionaries == []:
             return ("[]")
         else:
