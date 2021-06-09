@@ -30,7 +30,7 @@ class Base:
         """ returns the JSON representation of an object (string) """
         l = []
         if list_objs is None or list_objs == []:
-            l = []
+            list_objs = []
         for j in list_objs:
             l.append(cls.to_dictionary(j))
         with open('{}.json'.format(cls.__name__), "w") as file:
