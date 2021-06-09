@@ -35,3 +35,10 @@ class Base:
             l.append(cls.to_dictionary(j))
         with open('{}.json'.format(cls.__name__), "w") as file:
             file.write(cls.to_json_string(l))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ static method that deserializes json_string """
+        if json_string is None:
+            return "[]"
+        return json.loads(json_string)
