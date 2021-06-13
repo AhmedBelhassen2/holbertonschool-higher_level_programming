@@ -1,0 +1,81 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+imports the ``add_integer`` from the ``0-add_integer`` module:
+
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now testing it:
+
+    >>> text_indentation('''Kevin Apostol''')
+    Kevin Apostol
+
+    >>> text_indentation('''Kevin. Apostol''')
+    Kevin.
+    <BLANKLINE>
+    Apostol
+
+    >>> text_indentation('''Kevin. Apostol..''')
+    Kevin.
+    <BLANKLINE>
+    Apostol.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation('''?:.''')
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation('''Kevin.Apostol''')
+    Kevin.
+    <BLANKLINE>
+    Apostol
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation({1})
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation([1, 2, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation((1, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation({'a': 'Kevin'})
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> a = {2: 'two'}
+    >>> text_indentation(a)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
