@@ -36,4 +36,4 @@ def matrix_divided(matrix, div):
        for elm in matrix:
            if count is not len(elm):
               raise TypeError("Each row of the matrix must have the same size")
-    return [list(map(lambda x: round(n / div, 2), elm))for elm in matrix]
+    return [[round(n / div, 2) for n in elm] for elm in matrix]
