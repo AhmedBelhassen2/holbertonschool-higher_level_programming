@@ -20,15 +20,20 @@ def matrix_divided(matrix, div):
         raise TypeError('div must be a number')
     if div == 0:
         raise ZeroDivisionError('division by zero')
-    if type(matrix) is not list or not all((type(l) is list)for l in matrix) \
-        or not all((isinstance(n, (int, float))for n in l)for l in matrix) \
-            or len(matrix[0]) == 0:
-        raise TypeError(
+    for ele in matrix:
+        if isinstance(elm, list) is False:
+            raise TypeError(
                 "matrix must be a matrix "
                 "(list of lists) of integers/floats")
+        for n in elm:
+            if type(n) is not int and type(n) is not float:
+                raise TypeError(
+                "matrix must be a matrix "
+                "(list of lists) of integers/floats")
+
     if len(matrix) > 1:
        count = len(matrix[1])
-       for ele in matrix:
-           if count is not len(ele):
+       for elm in matrix:
+           if count is not len(elm):
               raise TypeError("Each row of the matrix must have the same size")
-    return [list(map(lambda x: round(x / div, 2), r))for r in matrix]
+    return [list(map(lambda x: round(n / div, 2), elm))for elm in matrix]
