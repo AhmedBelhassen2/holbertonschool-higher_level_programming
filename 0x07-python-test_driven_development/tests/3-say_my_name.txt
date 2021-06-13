@@ -15,14 +15,6 @@ first_name must be a string
 ...     print(e)
 ...
 first_name must be a string
-    >>> say_my_name(12, "White")
-    Traceback (most recent call last):
-    TypeError: first_name must be a string
-
-    >>> say_my_name("Barry", None)
-    Traceback (most recent call last):
-    TypeError: last_name must be a string
-
     >>> say_my_name(1, 2)
     Traceback (most recent call last):
     TypeError: first_name must be a string
@@ -31,7 +23,7 @@ first_name must be a string
     My name is  Holberton
 
     >>> say_my_name("", "")
-    My name is  
+    My name is
 
     >>> say_my_name()
     Traceback (most recent call last):
