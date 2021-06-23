@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" inheritance fn """
+"""
+inheritance fn
+"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
@@ -11,4 +13,3 @@ class Rectangle(BaseGeometry):
         self.integer_validator("width", width)
         self.height = height
         self.integer_validator("height", height)
-        
