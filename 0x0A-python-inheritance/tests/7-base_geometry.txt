@@ -1,44 +1,75 @@
-integer_validator(self, name, value)
+Module: 7-base_geometry
 ======================
 
-base_geometry fn
--------------------
+Import method
+-------------
+       >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
+Check for documentation
+-----------------------
+      >>> doc_mod = __import__("7-base_geometry").__doc__
+      >>> print(len(doc_mod) > 0)
+      True
 
-first check:
+      >>> doc_class = __import__("7-base_geometry").BaseGeometry.__doc__
+      >>> print(len(doc_class) > 0)
+      True
 
->>> bg.integer_validator("yass", "ha")
-Traceback (most recent call last):
-TypeError: yass must be an integer
+      >>> val_doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+      >>> print(len(val_doc) > 0)
+      True
+
+      >>> area_doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
+      >>> print(len(area_doc) > 0)
+      True
+
+===========
+Correct use:
+===========
+
+# instantiate and confirm type
+    >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+# check existance of area()
+    >>> "area" in dir(BaseGeometry)
+    True
+
+# check existance for integer_validator()
+    >>> "integer_validator" in dir(BaseGeometry)
+    True
+
+# negative value
+    >>> bg.integer_validator("name", -23)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
 
 
-second check
+==============
+Expected Errors
+===============
 
->>> bg.integer_validator("yass", [99])
-Traceback (most recent call last):
-TypeError: yass must be an integer
-
-third check
->>> bg.integer_validator("yass", 9.999)
-Traceback (most recent call last):
-TypeError: yass must be an integer
-
+# area should raise Exception
+       >>> bg.area()
+       Traceback (most recent call last):
+       ...
+       Exception: area() is not implemented
 
 
-fourth check
+# integer_validator: one argument
+      >>> bg.integer_validator(5)
+      Traceback (most recent call last):
+      ...
+      TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> bg.integer_validator() 
-Traceback (most recent call last):
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+# integer_validator: wrong argument type for value
+      >>> bg.integer_validator("size", "5")
+      Traceback (most recent call last):
+      ...
+      TypeError: size must be an integer
 
-fifth check
->>> bg.integer_validator("yass", 77, 3)
-Traceback (most recent call last):
-TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
-sixth check:
->>> bg.integer_validator(None) 
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+# integer_validator: zero for value
+  >>> bg.integer_validator("name", 0)
+  Traceback (most recent call last):
+  ValueError: name must be greater than 0
