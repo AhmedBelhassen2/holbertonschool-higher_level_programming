@@ -1,0 +1,26 @@
+""" Class with area method that raises an exception and integer_validator method
+that validates the value parameter.
+
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator('age', -14)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
+>>> bg.integer_validator('length', '40 cm')
+Traceback (most recent call last):
+    ...
+TypeError: length must be an integer
+>>> bg.integer_validator('height', 1.84)
+Traceback (most recent call last):
+    ...
+TypeError: height must be an integer
+>>> bg.integer_validator('items', [10, 20, 30])
+Traceback (most recent call last):
+    ...
+TypeError: items must be an integer
+>>> bg.integer_validator('percentage', 0)
+Traceback (most recent call last):
+    ...
+ValueError: percentage must be greater than 0
