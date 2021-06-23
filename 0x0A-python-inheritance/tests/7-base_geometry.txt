@@ -1,26 +1,44 @@
-""" Class with area method that raises an exception and integer_validator method
-that validates the value parameter.
+integer_validator(self, name, value)
+======================
 
+base_geometry fn
+-------------------
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
->>> bg.integer_validator('age', -14)
+
+first check:
+
+>>> bg.integer_validator("yass", "ha")
 Traceback (most recent call last):
-    ...
-ValueError: age must be greater than 0
->>> bg.integer_validator('length', '40 cm')
+TypeError: yass must be an integer
+
+
+second check
+
+>>> bg.integer_validator("yass", [99])
 Traceback (most recent call last):
-    ...
-TypeError: length must be an integer
->>> bg.integer_validator('height', 1.84)
+TypeError: yass must be an integer
+
+third check
+>>> bg.integer_validator("yass", 9.999)
 Traceback (most recent call last):
-    ...
-TypeError: height must be an integer
->>> bg.integer_validator('items', [10, 20, 30])
+TypeError: yass must be an integer
+
+
+
+fourth check
+
+>>> bg.integer_validator() 
 Traceback (most recent call last):
-    ...
-TypeError: items must be an integer
->>> bg.integer_validator('percentage', 0)
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+fifth check
+>>> bg.integer_validator("yass", 77, 3)
 Traceback (most recent call last):
-    ...
-ValueError: percentage must be greater than 0
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+sixth check:
+>>> bg.integer_validator(None) 
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
