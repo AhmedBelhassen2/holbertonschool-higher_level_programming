@@ -11,6 +11,6 @@ if __name__ == "__main__":
                 "c.state_id = s.id WHERE s.name = %s "
                 "ORDER BY c.id ASC", (sys.argv[4],))
     query_rows = cur.fetchall()
-    print(", ".join([row[0] for row in query]))
+    print(", ".join(row[0] for row in query))
     cur.close()
     conn.close()
